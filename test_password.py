@@ -82,7 +82,7 @@ class TestCredentials(unittest.TestCase):
         test case to confirm if multiple credentilas can be saved into credentials list
         '''
         self.new_credentials.save_credentials()
-        new_account=Credentials("Twiitter","josephat_otieno", "joseotis45")
+        new_account=Credentials("Twitter","josephat_otieno", "joseotis45")
         new_account.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -91,7 +91,7 @@ class TestCredentials(unittest.TestCase):
         delete_crdentials case to test if we can delete a credential
         '''
         self.new_credentials.save_credentials()
-        new_account=Credentials("Twiitter","josephat_otieno", "joseotis45")
+        new_account=Credentials("Twitter","josephat_otieno", "joseotis45")
         new_account.save_credentials()
 
         self.new_credentials.delete_credentials() 
@@ -102,15 +102,28 @@ class TestCredentials(unittest.TestCase):
         test to check if we can find a credential entry by account name and display the details of the credential
         """
         self.new_credentials.save_credentials()
-        new_account= Credentials("Twiitter","josephat_otieno", "joseotis45")
+        new_account= Credentials("Twitter","josephat_otieno", "joseotis45")
         new_account.save_credentials()
 
         found_credential= Credentials.find_credentials("Twitter")
 
         self.assertEqual(found_credential.account_name,new_account.account_name)
 
+    def test_credentials_exists(self):
+        '''
+        test to check if we can return a boolean if we 
+        cannot find a credentials using the account name"
+        '''
+        self.new_credentials.save_credentials()
+        new_account= Credentials("Twitter","josephat_otieno", "joseotis45")
+        new_account.save_credentials()
 
+        credentials_exists=Credentials.credentials_exists("Twitter")
 
+        self.assertTrue(credentials_exists)
+       
+       
+        
 if __name__=='__main__':
     unittest.main()
 

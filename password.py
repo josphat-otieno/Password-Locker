@@ -1,3 +1,4 @@
+import string
 class User:
     '''
     class that generates new instances of users
@@ -62,7 +63,7 @@ class Credentials:
         Credentials.credentials_list.remove(self)
 
     @classmethod
-    def find_credentials(cls, account_name):
+    def find_credentials(cls, string):
         '''
         Method takes in a acount name and returns the credentials that matches that account.
 
@@ -72,8 +73,22 @@ class Credentials:
             returns the credentials that matches that account name.
         '''
         for credential in cls.credentials_list:
-            if credential.account_name == account_name:
+            if credential.account_name == string:
                 return credential
+
+    @classmethod
+    def credentials_exists(cls, string):
+        '''
+        a method that checks if the credentials exists
+        from the credentials_list
+        args: account_name and a boolean
+        '''
+        for credential in cls.credentials_list:
+            if credential.account_name==string:
+                return True
+        return False
+
+         
 
 
 
