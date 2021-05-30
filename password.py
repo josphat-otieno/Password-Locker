@@ -20,5 +20,14 @@ class User:
         '''
         User.user_list.append(self)
 
+    @classmethod
+    def display_user(cls):
+        '''
+        dispaly method to dispaly user in a list
+        '''
+        return cls.user_list
+
+        
+
     
         
