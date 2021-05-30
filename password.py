@@ -10,6 +10,9 @@ class User:
     def __init__(self, username,password):
         '''
         A method to define properties of a user
+        args:
+            username
+            password
         '''
         self.username=username
         self.password=password
@@ -21,13 +24,17 @@ class User:
         User.user_list.append(self)
 
     @classmethod
-    def display_user(cls):
+    def display_users(cls):
         '''
         dispaly method to dispaly user in a list
         '''
         return cls.user_list
 
-        
+class Credentials:
+    '''
+    class that generates new instances of credentials
+    '''
+
 
     
         
