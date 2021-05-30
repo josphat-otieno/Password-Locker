@@ -60,7 +60,7 @@ class TestCredentials(unittest.TestCase):
         '''
         tearDown method that does clean up after each test case has run.
         '''
-        Credentials.credentilas_list=[]    
+        Credentials.credentials_list=[]    
 
     def test_init(self):
         '''
@@ -77,6 +77,30 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
 
+    def test_save_multiple_credentials(self):
+        '''
+        test case to confirm if multiple credentilas can be saved into credentials list
+        '''
+        self.new_credentials.save_credentials()
+        new_account=Credentials("Twiitter","josephat_otieno", "joseotis45")
+        new_account.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
+
+    def test_delete_credential(self):
+        '''
+        delete_crdentials case to test if we can delete a credential
+        '''
+        self.new_credentials.save_credentials()
+        new_account=Credentials("Twiitter","josephat_otieno", "joseotis45")
+        new_account.save_credentials()
+
+        self.new_credentials.delete_credentials() 
+        self.assertEqual(len(Credentials.credentials_list),1)
+
+
+
+if __name__=='__main__':
+    unittest.main()
 
 
 
