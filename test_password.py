@@ -1,6 +1,6 @@
 import unittest
-from password import User
-class Testser(unittest.TestCase):
+from password import Credentials, User 
+class TestUser(unittest.TestCase):
     """
     A Test class that defines test cases for the User class.
     """
@@ -38,4 +38,25 @@ class Testser(unittest.TestCase):
         method that returns a list of all users saved
         '''
         self.assertEqual(User.display_users(),User.user_list)
+
+class TestCredentials(unittest.TestCase):
+    '''
+    A Test class that defines test cases for the Creentials  class.
+    '''
+
+    def setUp(self):
+        """
+        Method that runs before each individual test methods run.
+        """
+        self.new_credentials = Credentials("Facebook","Josphato","jose!!otieno@45")
+
+    def test_init_credentials(self):
+        '''
+        test case to confirm if credentials objects is intialised correctly
+        '''
+        self.assertEqual(self.new_credentials.account_name,'Facebook')
+        self.assertEqual(self.new_credentials.account_username,'Facebook')
+        self.assertEqual(self.new_credentials.account_password,'Facebook')
+
+
 
