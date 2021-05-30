@@ -33,3 +33,9 @@ class Testser(unittest.TestCase):
         another_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
+    def test_display_all_users(self):
+        '''
+        method that returns a list of all users saved
+        '''
+        self.assertEqual(User.display_users(),User.user_list)
+
