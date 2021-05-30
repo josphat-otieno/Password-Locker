@@ -10,6 +10,12 @@ class TestUser(unittest.TestCase):
         """
         self.new_user = User('JosphatOtieno','jose@otis45')
 
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        User.user_list=[]
+
     def test_init(self):
         '''
         test case to test if the object user is initialised correctly
@@ -50,13 +56,27 @@ class TestCredentials(unittest.TestCase):
         """
         self.new_credentials = Credentials("Facebook","Josphato","jose!!otieno@45")
 
-    def test_init_credentials(self):
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Credentials.credentilas_list=[]    
+
+    def test_init(self):
         '''
         test case to confirm if credentials objects is intialised correctly
         '''
         self.assertEqual(self.new_credentials.account_name,'Facebook')
-        self.assertEqual(self.new_credentials.account_username,'Facebook')
-        self.assertEqual(self.new_credentials.account_password,'Facebook')
+        self.assertEqual(self.new_credentials.account_username,'Josphato')
+        self.assertEqual(self.new_credentials.account_password,'jose!!otieno@45')
+
+    def test_save_credentials(self):
+        '''
+        test case to test if the credentials are saved into the credentilas list
+        '''
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
+
 
 
 

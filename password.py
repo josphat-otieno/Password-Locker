@@ -35,6 +35,29 @@ class Credentials:
     class that generates new instances of credentials
     '''
 
+    credentials_list=[]
+
+    def __init__(self, account_name, account_username, account_password):
+        '''
+        A method to define properties of a user credenntials
+        args:
+            account_name
+            account_username
+            account_password  
+        '''
+        self.account_name=account_name
+        self.account_username=account_username
+        self.account_password=account_password
+
+    def save_credentials(self):
+        '''
+        method to save credentials objects into credentials list
+        '''
+        Credentials.credentials_list.append(self)
+        
+
+    
+
 
     
         
