@@ -80,7 +80,7 @@ def generate_password():
     return randon_password
 
 def main():
-    print("WELCOME TO PASSWORD LOCKER APP. \n To continue, please enter one of the following short codes: \n CA----Create new user Account \n AH----Already have an account? \n")
+    print("WELCOME TO PASSWORD LOCKER APP. \n To continue, please enter one of the following short codes: \n CA----Create new user Account \n AH----Already have an account? \n EX---to exit the application")
     short_code=input().lower()
     if short_code=="ca":
         print("Create your new user account")
@@ -112,6 +112,9 @@ def main():
         if user_login==sign_in:
             print(f"Hello {username}, welcome to your password locker app manager")
             print('\n')
+
+    elif short_code=="ex":
+         print("THANK YOU FOR VISITING PASSWORD LOCKER APP")
     
     while True:
         print("Create your account's credentials using the following short codes:\n cc-create a new credential \n DC-To display credential \n FC-To find credential \n CD-To delete crdential \n EX-To exit the app")
