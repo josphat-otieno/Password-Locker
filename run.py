@@ -143,7 +143,7 @@ def main():
 
         elif short_code=='fc':
             print("Enter the account name you would wish to search for")     
-            name=input().lower()
+            name=input()
             if find_credentials(name):
                 search_credential=find_credentials(name)
                 print(f"Account name: {search_credential.accountName}")  
@@ -153,9 +153,30 @@ def main():
             else:
                 print("The credentials you searched for does not exist")
                 print('\n')
-        
-        
 
+        elif short_code=='cd':
+            print("Enter the account you want to delete")
+            name=input()
+            if find_credentials(name):
+                search_credential=find_credentials(name)
+                print('\n')
+                search_credential.delete_credentials()
+                print('\n')
+                print(f"Your credentials for {search_credential.accountName} have been deleted successfully")
+
+            else:
+                print("The credentials you want to delete do not exist")
+
+        elif short_code == 'ex':
+            print("Thanks for using password locker app")
+            break
+
+        else:
+            print("Wrong entry... Check your entry again and let it match those in the menu")
+        
+        
+if __name__=='main':
+    main()
 
  
 
