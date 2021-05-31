@@ -119,13 +119,28 @@ def main():
                 print("Create the account password using the following short codes: TP to type your own password and GP - to be gnerated with a random password ")
                 my_password=input().lower()
                 if my_password=='tp':
-                    password = input("Enter your preffered password")
+                    accountPassword = input("Enter your preffered password")
 
                 elif my_password=='gp':
                     my_password=generate_password()
                     break
                 else:
                     print("invalid password")
+            save_credentials(create_new_credentials(accountName, accountUsername, password))
+            print('\n')
+            print(f"Account Credential for: {accountName} - User Name: {accountUsername} - Password:{accountPassword} created succesfully")
+            print('\n')
+        elif short_code=='dc':
+            if display_credentials():
+                print("These are you accounts and credentials")
+                print('*'*20)
+                for account in display_credentials():
+                    print(f"Account: {account.accountName}....User Name: {account.accountUsername}....Password: {account.accountPassword}")
+                    print('*'*10)
+            
+            else:
+                print("YOU DON'T HAVE ANY CREDENTIALS SAVED!!")
+                
                    
                 
 
