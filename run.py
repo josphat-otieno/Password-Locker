@@ -26,11 +26,11 @@ def user_login(username, password):
     check_user = Credentials.verify_user(username,password)
     return check_user
 
-def create_new_credentials(accountName, accountUsername, accountPassword):
+def create_new_credentials(account_name, account_username, account_password):
     '''
     function to return new credentials 
     '''
-    new_credentials=Credentials(accountName, accountUsername, accountPassword)
+    new_credentials=Credentials(account_name, account_username, account_password)
     return new_credentials
 
 def save_credentials(credentials):
@@ -112,30 +112,33 @@ def main():
             print("Cretae new ccredential account")
             print('-'*10)
             print("Account name: ")
-            accountName=input()
+            account_name=input()
             print("Entrer your account username:")
-            accountUsername=input()
+            account_username=input()
             while True:
                 print("Create the account password using the following short codes: TP to type your own password and GP - to be gnerated with a random password ")
-                my_password=input().lower()
+                my_password=input()
                 if my_password=='tp':
-                    accountPassword = input("Enter your preffered password")
+                    account_password= input("Enter your preffered password")
 
                 elif my_password=='gp':
-                    my_password=generate_password()
+                    account_password=generate_password()
                     break
+
                 else:
                     print("invalid password")
-            save_credentials(create_new_credentials(accountName, accountUsername, password))
+                    
+            save_credentials(create_new_credentials(account_name, account_username, account_password))
             print('\n')
-            print(f"Account Credential for: {accountName} - User Name: {accountUsername} - Password:{accountPassword} created succesfully")
+            print(f"Account Credential for: {account_name} - User Name: {account_username} - Password:{account_password} created succesfully")
             print('\n')
+
         elif short_code=='dc':
             if display_credentials():
                 print("These are you accounts and credentials")
                 print('*'*20)
                 for account in display_credentials():
-                    print(f"Account: {account.accountName}....User Name: {account.accountUsername}....Password: {account.accountPassword}")
+                    print(f"Account: {account.account_name}....User Name: {account.account_username}....Password: {account.account_password}")
                     print('*'*10)
             
             else:
@@ -146,9 +149,9 @@ def main():
             name=input()
             if find_credentials(name):
                 search_credential=find_credentials(name)
-                print(f"Account name: {search_credential.accountName}")  
+                print(f"Account name: {search_credential.account_name}")  
                 print('*'*10)
-                print(f"User Name: {search_credential.accountUserame}.... Password :{search_credential.accountPassword}")  
+                print(f"User Name: {search_credential.account_username}.... Password :{search_credential.account_password}")  
 
             else:
                 print("The credentials you searched for does not exist")
@@ -162,7 +165,7 @@ def main():
                 print('\n')
                 search_credential.delete_credentials()
                 print('\n')
-                print(f"Your credentials for {search_credential.accountName} have been deleted successfully")
+                print(f"Your credentials for {search_credential.account_name} have been deleted successfully")
 
             else:
                 print("The credentials you want to delete do not exist")
@@ -175,7 +178,7 @@ def main():
             print("Wrong entry... Check your entry again and let it match those in the menu")
         
         
-if __name__=='main':
+if __name__=='__main__':
     main()
 
  
