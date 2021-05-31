@@ -50,7 +50,26 @@ def find_credentials(account_name):
     '''
     function to find credentials using account_name
     '''
-    return Credentials.find_credentials()
-    
+    return Credentials.find_credentials(account_name)
+
+def credentials_exists(account_name):
+    '''
+    function to check existing credentials and return a boolean 
+    '''
+    return Credentials.credentials_exists(account_name)
+
+def display_credentials():
+    '''
+    function that returns all credentials saved
+    '''
+    return Credentials.display_credentials()
+
+def generate_password():
+    '''
+    function that genarates random passwords
+    '''
+    randon_password=Credentials.generate_password()
+    return randon_password
+
  
 
