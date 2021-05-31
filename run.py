@@ -78,6 +78,34 @@ def main():
         print("Create your new user account")
         print('-'*20)
         username=input("Enter your Username: ")
+        while True:
+            print("Enter TP to type your own password or GP to generate a random password from the application")
+            my_password= input().lower()
+            if my_password=='tp':
+                password= input("Enter your preffered password:.. ")
+                break
+            elif my_password=='gp':
+                password=generate_password()
+                break
+            else:
+                print("Please input a valid password and try again")
+        save_users(create_user_account(username,password))
+        print('*'*50)
+        print(f"Your account was created successful,your username is {username} and your password is {password}")
+        print('*'*50)
+
+    elif short_code=="ha":
+        print("*"*50)
+        print("Enter your User name and your Password to sign in:")
+        print("*"*50)
+        username=input("Enter your user name: ")
+        password= input("Please enter your password: ")
+        sign_in=user_login(username,password)
+        if user_login==sign_in:
+            print(f"Hello {username}, welcome to your password locker app manager")
+            print('\n')
+            
+                
 
 
  
