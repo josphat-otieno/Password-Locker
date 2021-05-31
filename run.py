@@ -1,4 +1,8 @@
 from password import User, Credentials
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=False)
+print (Fore.RED + Back.WHITE + Style.BRIGHT +' some text')
 def my_name():
     print("       __   ____     ____  ____   ____            _   _______             ____   ____    ")
     print("        |  /    \   /      |     |    \ |    |    /\     |         /\    |    \ |    \   ")
@@ -124,7 +128,7 @@ def main():
         short_code=input().lower()
         if short_code=='cc':
             print('\n')
-            print("Cretae new ccredential account")
+            print("Cretae new credential account")
             print('-'*10)
             print('\n')
             print("Account name: ")
@@ -147,12 +151,12 @@ def main():
                     
             save_credentials(create_new_credentials(account_name, account_username, account_password))
             print('\n')
-            print(f"Account Credential for: {account_name} - User Name: {account_username} - Password:{account_password} created succesfully")
+            print(f"Account Credential for: {account_name}  User Name: {account_username} - Password:{account_password} was created succesfully")
             print('\n')
 
         elif short_code=='dc':
             if display_credentials():
-                print("These are you accounts and credentials")
+                print("These are you accounts and their respective credentials")
                 print('\n')
                 print('*'*20)
                 for account in display_credentials():
@@ -193,7 +197,7 @@ def main():
             break
 
         else:
-            print("Wrong entry... Check your entry again and let it match those in the menu")
+            print("Wrong entries, Please review the short codes to help you!!")
         
         
 if __name__=='__main__':
