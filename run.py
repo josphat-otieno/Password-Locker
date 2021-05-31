@@ -104,7 +104,29 @@ def main():
         if user_login==sign_in:
             print(f"Hello {username}, welcome to your password locker app manager")
             print('\n')
-            
+    
+    while True:
+        print("Create your account's credentials using the following short codes:\n cc-create a new credential \n DC-To display credential \n FC-To find credential \n CD-To delete crdential \n EX-To exit the app")
+        short_code=input().lower()
+        if short_code=='cc':
+            print("Cretae new ccredential account")
+            print('-'*10)
+            print("Account name: ")
+            accountName=input()
+            print("Entrer your account username:")
+            accountUsername=input()
+            while True:
+                print("Create the account password using the following short codes: TP to type your own password and GP - to be gnerated with a random password ")
+                my_password=input().lower()
+                if my_password=='tp':
+                    password = input("Enter your preffered password")
+
+                elif my_password=='gp':
+                    my_password=generate_password()
+                    break
+                else:
+                    print("invalid password")
+                   
                 
 
 
