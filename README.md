@@ -15,7 +15,7 @@ The short codes are:
 * ex - exit for password locker account and also exit the terminal app
 
 
-## Specifications
+## Behaviour Driven Development
 | Behavior        | Input           | Outcome  |
 | ------------- |:-------------:| -----:|
 | Create an account | User Name : Josephat <br/> Password : jose | An account is created |
@@ -30,7 +30,9 @@ The short codes are:
 * Python3.8
 
 ## Setup/Installation Requirements
-* Clone [this repository](https://github.com/josphat-otieno/Password-Locker.git) and run the `run.py` file to interact with the application using the following command `$python3.8 run.py`
+* Clone [this repository](https://github.com/josphat-otieno/Password-Locker.git)  using the following commamnd  in the terminal: `git clone https://github.com/josphat-otieno/Password-Locker.git`. 
+* Note:<em>You will need to git installed in your machine. You can install using the following comman: `$ sudo apt-get install git.`</em>
+* After cloning, navigate to the folder where the repo was cloned and open it with your favorite code editor and run the `run.py` file to interact with the application using the following command `$python3.8 run.py`
 * Run test_password.py to   run the test units using the following command `$python3.8 test_password.py`
 ## Known Bugs
 
