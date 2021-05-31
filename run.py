@@ -2,7 +2,7 @@ from password import User, Credentials
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=False)
-print (Fore.RED + Back.WHITE + Style.BRIGHT +' some text')
+print (Fore.RED + Back.WHITE + Style.BRIGHT +' ')
 def my_name():
     print("       __   ____     ____  ____   ____            _   _______             ____   ____    ")
     print("        |  /    \   /      |     |    \ |    |    /\     |         /\    |    \ |    \   ")
