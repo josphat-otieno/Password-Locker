@@ -71,5 +71,14 @@ def generate_password():
     randon_password=Credentials.generate_password()
     return randon_password
 
+def main():
+    print("WELCOME TO PASSWORD LOCKER APP. \n To continue, please enter one of the following short codes: \n CA----Create new user Account \n AH----Already have an account? \n")
+    short_code=input().lower()
+    if short_code=="ca":
+        print("Create your new user account")
+        print('-'*20)
+        username=input("Enter your Username: ")
+
+
  
 

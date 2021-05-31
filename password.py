@@ -115,6 +115,8 @@ class Credentials:
         alphanum = string.ascii_uppercase + string.digits + string.ascii_lowercase
         random_password = ''.join( choice(alphanum) for num in range(size))
         return random_password
+
+
         
 
 
