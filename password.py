@@ -74,7 +74,7 @@ class Credentials:
         Credentials.credentials_list.remove(self)
 
     @classmethod
-    def find_credentials(cls, string):
+    def find_credentials(cls, account_name):
         '''
         Method takes in a acount name and returns the credentials that matches that account.
 
@@ -84,18 +84,18 @@ class Credentials:
             returns the credentials that matches that account name.
         '''
         for credential in cls.credentials_list:
-            if credential.account_name == string:
+            if credential.account_name == account_name:
                 return credential
 
     @classmethod
-    def credentials_exists(cls, string):
+    def credentials_exists(cls, account_name):
         '''
         a method that checks if the credentials exists
         from the credentials_list
         args: account_name and a boolean
         '''
         for credential in cls.credentials_list:
-            if credential.account_name==string:
+            if credential.account_name==account_name:
                 return True
         return False
 
