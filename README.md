@@ -22,7 +22,6 @@ The short codes are:
 | Display account names | N/A | Display a list of user names for Password Locker accounts |
 | Log into an account | User Name : John <br/> Password : doe | Log into the users account |
 | Store existing log in credential | Account : gmail <br/> Password : jose | Create and save the user's credentials | 
-| Display a specific users credentials | N/A | List of the user's credentials | 
 | Generate a password for a new credential | Account : Password Locker | Generate a password for the user. <br/> Create and save the user's credential with the generated password | 
 | Log out | N/A | Log out of Password Locker account |
 
