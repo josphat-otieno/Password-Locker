@@ -134,20 +134,20 @@ def main():
             print("Account name: ")
             account_name=input()
             print('\n')
-            print("Entrer your account username:....")
+            print("Enter your account username:....")
             account_username=input()
             while True:
                 print("Create the account password using the following short codes: TP to type your own password and GP - to be gnerated with a random password ")
                 my_password=input()
                 if my_password=='tp':
-                    account_password= input("Enter your preffered password")
+                    account_password= input("Enter your preffered password: ")
 
                 elif my_password=='gp':
                     account_password=generate_password()
                     break
 
                 else:
-                    print("invalid password")
+                    print("invalid choice for creating password")
                     
             save_credentials(create_new_credentials(account_name, account_username, account_password))
             print('\n')
@@ -160,7 +160,7 @@ def main():
                 print('\n')
                 print('*'*20)
                 for account in display_credentials():
-                    print(f"Account: {account.account_name}....User Name: {account.account_username}....Password: {account.account_password}")
+                    print(f"Account Name: {account.account_name}....Account User Name: {account.account_username}....Account Password: {account.account_password}")
                     print('*'*10)
             
             else:

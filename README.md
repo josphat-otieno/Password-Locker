@@ -12,7 +12,7 @@ The short codes are:
 * dc - display credentials for the logged in user
 * fc - finding the existing user credentials for the logged in user accounts
 * cd - deleting user credentials
-* ex - exit for password locker account and also exit the terminal app
+* ex - exit from password locker account and also exit the terminal app
 
 
 ## Behaviour Driven Development
@@ -21,7 +21,7 @@ The short codes are:
 | Create an account | User Name : Josephat <br/> Password : jose | An account is created |
 | Display account names | N/A | Display a list of user names for Password Locker accounts |
 | Log into an account | User Name : John <br/> Password : doe | Log into the users account |
-| Store existing log in credential | Account : Githib <br/> Password : doe1 | Create and save the user's credentials | 
+| Store existing log in credential | Account : gmail <br/> Password : jose | Create and save the user's credentials | 
 | Display a specific users credentials | N/A | List of the user's credentials | 
 | Generate a password for a new credential | Account : Password Locker | Generate a password for the user. <br/> Create and save the user's credential with the generated password | 
 | Log out | N/A | Log out of Password Locker account |
