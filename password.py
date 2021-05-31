@@ -39,6 +39,16 @@ class Credentials:
 
     credentials_list=[]
 
+    def verify_user(cls,username, password):
+        """
+        method to verify whether the user is in our user_list or not
+        """
+        a_user = ""
+        for user in User.user_list:
+            if(user.username == username and user.password == password):
+                    a_user == user.username
+        return a_user
+
     def __init__(self, account_name, account_username, account_password):
         '''
         A method to define properties of a user credenntials
@@ -103,8 +113,8 @@ class Credentials:
         '''
         size = 8
         alphanum = string.ascii_uppercase + string.digits + string.ascii_lowercase
-        password = ''.join( choice(alphanum) for num in range(size) )
-        return password
+        random_password = ''.join( choice(alphanum) for num in range(size))
+        return random_password
         
 
 
