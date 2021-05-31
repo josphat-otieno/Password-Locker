@@ -98,8 +98,11 @@ def main():
             else:
                 print("Please input a valid password and try again")
         save_users(create_user_account(username,password))
+        print('\n')
         print('*'*50)
+        print('\n')
         print(f"Your account was created successful,your username is {username} and your password is {password}")
+        print('\n')
         print('*'*50)
 
     elif short_code=="ha":
@@ -120,11 +123,14 @@ def main():
         print("Create your account's credentials using the following short codes:\n cc-create a new credential \n DC-To display credential \n FC-To find credential \n CD-To delete crdential \n EX-To exit the app")
         short_code=input().lower()
         if short_code=='cc':
+            print('\n')
             print("Cretae new ccredential account")
             print('-'*10)
+            print('\n')
             print("Account name: ")
             account_name=input()
-            print("Entrer your account username:")
+            print('\n')
+            print("Entrer your account username:....")
             account_username=input()
             while True:
                 print("Create the account password using the following short codes: TP to type your own password and GP - to be gnerated with a random password ")
@@ -147,6 +153,7 @@ def main():
         elif short_code=='dc':
             if display_credentials():
                 print("These are you accounts and credentials")
+                print('\n')
                 print('*'*20)
                 for account in display_credentials():
                     print(f"Account: {account.account_name}....User Name: {account.account_username}....Password: {account.account_password}")
