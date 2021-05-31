@@ -128,7 +128,13 @@ class TestCredentials(unittest.TestCase):
         '''
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list) 
         
-
+    def test_generate_password(self):
+        '''
+        Test case to test if a user can log into their credentials
+        '''
+        generated_password = self.new_credentials.generate_password()
+        self.assertEqual( len(generated_password), 8 )   
+  
           
 if __name__=='__main__':
     unittest.main()

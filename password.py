@@ -1,4 +1,5 @@
 import string
+from random import choice
 class User:
     '''
     class that generates new instances of users
@@ -94,6 +95,17 @@ class Credentials:
         method to return all credentials saved from credentials list
         '''
         return cls.credentials_list
+
+    @classmethod
+    def generate_password(cls):
+        '''
+        Method that generates a random alphanumeric password
+        '''
+        size = 8
+        alphanum = string.ascii_uppercase + string.digits + string.ascii_lowercase
+        password = ''.join( choice(alphanum) for num in range(size) )
+        return password
+        
 
 
 
