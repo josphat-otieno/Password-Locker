@@ -1,4 +1,12 @@
 from password import User, Credentials
+def my_name():
+    print("       __   ____     ____  ____   ____            _   _______             ____   ____    ")
+    print("        |  /    \   /      |     |    \ |    |    /\     |         /\    |    \ |    \   ")
+    print("        | |      |  \____  |___  |____/ |____|   /  \    |        /  \   |____/ |____/   ")
+    print("        | |      |       \ |     |      |    |  /____\   |       /____\  |      |        ")
+    print("     ___|  \____/    ____/ |___  |      |    | /      \  |      /      \ |      |        ")
+my_name()
+print('\n')
 
 def create_user_account(username, password):
     '''
